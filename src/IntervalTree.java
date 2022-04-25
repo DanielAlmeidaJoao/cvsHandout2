@@ -84,6 +84,7 @@ public class IntervalTree {
         return total;
     }
     public int query(int a, int b){
+        assert(a>b);
         int startA = a;
         int startB = b;
         int ra = a + len-1;
@@ -108,7 +109,7 @@ public class IntervalTree {
     }
 
     public static void main(String [] args){
-        System.out.println("STARTED");
+        System.out.println("STARTED j");
         /**
         IntervalTree it = new IntervalTree(8);
         it.update(0,10);
@@ -127,7 +128,7 @@ public class IntervalTree {
         **/
 
         Random rd = new Random();
-        int len = rd.nextInt(5);
+        int len = 1+rd.nextInt(10);
         System.out.println(len);
         int allSum = 0;
         IntervalTree it = new IntervalTree(len);
@@ -143,9 +144,9 @@ public class IntervalTree {
 
     public static void testQuerySum(IntervalTree it, int len){
         Random rd = new Random();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5; i++) {
             int a = rd.nextInt(len-1);
-            int b = rd.nextInt(a,len);
+            int b = rd.nextInt(a+1,len);
             System.out.println(it.query(a,b));
         }
     }
