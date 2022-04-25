@@ -109,7 +109,7 @@ public class IntervalTree {
     }
 
     public static void main(String [] args){
-        System.out.println("STARTED j");
+        System.out.println("STARTED jh");
         /**
         IntervalTree it = new IntervalTree(8);
         it.update(0,10);
